@@ -1,0 +1,123 @@
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Code, Database, Settings, Shield, BarChart2, Cloud, Monitor, PieChart, Layers, Terminal } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const Portfolio = () => {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-8">
+      <header className="text-center py-12">
+        <h1 className="text-5xl font-bold">Data Engineer & BI Technology</h1>
+        <p className="mt-4 text-lg text-gray-400">Crafting data solutions with precision and efficiency</p>
+      </header>
+
+      <motion.section 
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {[{
+          icon: <Database className="w-12 h-12 text-blue-400 mb-4" />, 
+          title: 'Analytical Systems Development', 
+          titleColor: 'text-blue-300',
+          description: 'Design, development, and maintenance of OLAP cubes using SSAS and PowerBI Semantic models.', 
+          skills: 'Key Skills: SSAS, PowerBI', 
+          hoverColor: 'hover:bg-blue-700 hover:text-blue-100'
+        }, {
+          icon: <Code className="w-12 h-12 text-green-400 mb-4" />, 
+          title: 'Database Management and SQL', 
+          titleColor: 'text-green-300',
+          description: 'Writing T-SQL procedures and views in SQL Server, working with Azure Data Warehouse.', 
+          skills: 'Key Skills: T-SQL, Azure Data Warehouse', 
+          hoverColor: 'hover:bg-green-700 hover:text-green-100'
+        }, {
+          icon: <Settings className="w-12 h-12 text-purple-400 mb-4" />, 
+          title: 'Data Integration and ETL', 
+          titleColor: 'text-purple-300',
+          description: 'Building ETL processes using SSIS and Azure Data Factory, optimizing Data Flows and DWH.', 
+          skills: 'Key Skills: SSIS, Azure Data Factory, DWH', 
+          hoverColor: 'hover:bg-purple-700 hover:text-purple-100'
+        }, {
+          icon: <BarChart2 className="w-12 h-12 text-yellow-400 mb-4" />, 
+          title: 'Reporting and Analytics', 
+          titleColor: 'text-yellow-300',
+          description: 'Developing reports and dashboards using SSRS, PowerBI, and DevExpress.', 
+          skills: 'Key Skills: SSRS, PowerBI, DevExpress', 
+          hoverColor: 'hover:bg-yellow-700 hover:text-yellow-100'
+        }, {
+          icon: <PieChart className="w-12 h-12 text-pink-400 mb-4" />, 
+          title: 'Power BI and Embedded Analytics', 
+          titleColor: 'text-pink-300',
+          description: 'Developing and integrating Power BI dashboards with drill-through and drill-down capabilities.', 
+          skills: 'Key Skills: Power BI Client API, Power BI Rest API', 
+          hoverColor: 'hover:bg-pink-700 hover:text-pink-100'
+        }, {
+          icon: <Monitor className="w-12 h-12 text-teal-400 mb-4" />, 
+          title: 'BI System Monitoring and Optimization', 
+          titleColor: 'text-teal-300',
+          description: 'Monitoring and maintaining BI systems performance, including Power BI Premium.', 
+          skills: 'Key Skills: Power BI Service, Embedded Analytics', 
+          hoverColor: 'hover:bg-teal-700 hover:text-teal-100'
+        }, {
+          icon: <Cloud className="w-12 h-12 text-cyan-400 mb-4" />, 
+          title: 'Azure and Big Data', 
+          titleColor: 'text-cyan-300',
+          description: 'Experience with Azure Databricks, Databricks API, and Azure Data Factory.', 
+          skills: 'Key Skills: Azure Databricks, Azure Data Factory', 
+          hoverColor: 'hover:bg-cyan-700 hover:text-cyan-100'
+        }, {
+          icon: <Shield className="w-12 h-12 text-red-400 mb-4" />, 
+          title: 'Data Security', 
+          titleColor: 'text-red-300',
+          description: 'Implementing row-level security and managing security models in Power BI.', 
+          skills: 'Key Skills: Power BI Security', 
+          hoverColor: 'hover:bg-red-700 hover:text-red-100'
+        }, {
+          icon: <Layers className="w-12 h-12 text-indigo-400 mb-4" />, 
+          title: 'Project Management and BI Solutions', 
+          titleColor: 'text-indigo-300',
+          description: 'Overseeing full-cycle BI projects, including ETL, cubes, reports, and dashboards.', 
+          skills: 'Key Skills: ETL, BI Project Management', 
+          hoverColor: 'hover:bg-indigo-700 hover:text-indigo-100'
+        }, {
+          icon: <Terminal className="w-12 h-12 text-orange-400 mb-4" />, 
+          title: 'Programming Languages and Tools', 
+          titleColor: 'text-orange-300',
+          description: 'C#, PowerShell, PowerQuery M, PowerPivot, DAX, T-SQL, Python', 
+          /*skills: 'Key Skills: C#, PowerShell, Python, DAX, T-SQL, MS Synapse',*/
+          hoverColor: 'hover:bg-orange-700 hover:text-orange-100'
+        }].map((item, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <Card className={`bg-gray-800 rounded-2xl shadow-xl p-4 transition-colors duration-300 h-80 flex flex-col justify-between ${item.hoverColor}`}>
+              <CardContent className="flex flex-col justify-between h-full">
+                <div>
+                  {item.icon}
+                  <h2 className={`text-2xl font-semibold ${item.titleColor}`}>{item.title}</h2>
+                  <p className="mt-2 text-gray-400">{item.description}</p>
+                </div>
+                <p className="mt-2 text-sm text-gray-300">{item.skills}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </motion.section>
+
+      <footer className="text-center mt-12">
+        <Button 
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl"
+          onClick={() => window.open('https://www.linkedin.com/in/clasteruga/', '_blank')}
+        >
+          Contact Me
+        </Button>
+      </footer>
+    </div>
+  );
+};
+
+export default Portfolio;
