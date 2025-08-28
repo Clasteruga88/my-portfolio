@@ -1,123 +1,171 @@
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Code, Database, Settings, Shield, BarChart2, Cloud, Monitor, PieChart, Layers, Terminal } from 'lucide-react';
-import { motion } from 'framer-motion';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BI & Data Engineering Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
 
-const Portfolio = () => {
-  return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      <header className="text-center py-12">
-        <h1 className="text-5xl font-bold">Data Engineer & BI Technology</h1>
-        <p className="mt-4 text-lg text-gray-400">Crafting data solutions with precision and efficiency</p>
-      </header>
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+    }
 
-      <motion.section 
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {[{
-          icon: <Database className="w-12 h-12 text-blue-400 mb-4" />, 
-          title: 'Analytical Systems Development', 
-          titleColor: 'text-blue-300',
-          description: 'Design, development, and maintenance of OLAP cubes using SSAS and PowerBI Semantic models.', 
-          skills: 'Key Skills: SSAS, PowerBI', 
-          hoverColor: 'hover:bg-blue-700 hover:text-blue-100'
-        }, {
-          icon: <Code className="w-12 h-12 text-green-400 mb-4" />, 
-          title: 'Database Management and SQL', 
-          titleColor: 'text-green-300',
-          description: 'Writing T-SQL procedures and views in SQL Server, working with Azure Data Warehouse.', 
-          skills: 'Key Skills: T-SQL, Azure Data Warehouse', 
-          hoverColor: 'hover:bg-green-700 hover:text-green-100'
-        }, {
-          icon: <Settings className="w-12 h-12 text-purple-400 mb-4" />, 
-          title: 'Data Integration and ETL', 
-          titleColor: 'text-purple-300',
-          description: 'Building ETL processes using SSIS and Azure Data Factory, optimizing Data Flows and DWH.', 
-          skills: 'Key Skills: SSIS, Azure Data Factory, DWH', 
-          hoverColor: 'hover:bg-purple-700 hover:text-purple-100'
-        }, {
-          icon: <BarChart2 className="w-12 h-12 text-yellow-400 mb-4" />, 
-          title: 'Reporting and Analytics', 
-          titleColor: 'text-yellow-300',
-          description: 'Developing reports and dashboards using SSRS, PowerBI, and DevExpress.', 
-          skills: 'Key Skills: SSRS, PowerBI, DevExpress', 
-          hoverColor: 'hover:bg-yellow-700 hover:text-yellow-100'
-        }, {
-          icon: <PieChart className="w-12 h-12 text-pink-400 mb-4" />, 
-          title: 'Power BI and Embedded Analytics', 
-          titleColor: 'text-pink-300',
-          description: 'Developing and integrating Power BI dashboards with drill-through and drill-down capabilities.', 
-          skills: 'Key Skills: Power BI Client API, Power BI Rest API', 
-          hoverColor: 'hover:bg-pink-700 hover:text-pink-100'
-        }, {
-          icon: <Monitor className="w-12 h-12 text-teal-400 mb-4" />, 
-          title: 'BI System Monitoring and Optimization', 
-          titleColor: 'text-teal-300',
-          description: 'Monitoring and maintaining BI systems performance, including Power BI Premium.', 
-          skills: 'Key Skills: Power BI Service, Embedded Analytics', 
-          hoverColor: 'hover:bg-teal-700 hover:text-teal-100'
-        }, {
-          icon: <Cloud className="w-12 h-12 text-cyan-400 mb-4" />, 
-          title: 'Azure and Big Data', 
-          titleColor: 'text-cyan-300',
-          description: 'Experience with Azure Databricks, Databricks API, and Azure Data Factory.', 
-          skills: 'Key Skills: Azure Databricks, Azure Data Factory', 
-          hoverColor: 'hover:bg-cyan-700 hover:text-cyan-100'
-        }, {
-          icon: <Shield className="w-12 h-12 text-red-400 mb-4" />, 
-          title: 'Data Security', 
-          titleColor: 'text-red-300',
-          description: 'Implementing row-level security and managing security models in Power BI.', 
-          skills: 'Key Skills: Power BI Security', 
-          hoverColor: 'hover:bg-red-700 hover:text-red-100'
-        }, {
-          icon: <Layers className="w-12 h-12 text-indigo-400 mb-4" />, 
-          title: 'Project Management and BI Solutions', 
-          titleColor: 'text-indigo-300',
-          description: 'Overseeing full-cycle BI projects, including ETL, cubes, reports, and dashboards.', 
-          skills: 'Key Skills: ETL, BI Project Management', 
-          hoverColor: 'hover:bg-indigo-700 hover:text-indigo-100'
-        }, {
-          icon: <Terminal className="w-12 h-12 text-orange-400 mb-4" />, 
-          title: 'Programming Languages and Tools', 
-          titleColor: 'text-orange-300',
-          description: 'C#, PowerShell, PowerQuery M, PowerPivot, DAX, T-SQL, Python', 
-          /*skills: 'Key Skills: C#, PowerShell, Python, DAX, T-SQL, MS Synapse',*/
-          hoverColor: 'hover:bg-orange-700 hover:text-orange-100'
-        }].map((item, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <Card className={`bg-gray-800 rounded-2xl shadow-xl p-4 transition-colors duration-300 h-80 flex flex-col justify-between ${item.hoverColor}`}>
-              <CardContent className="flex flex-col justify-between h-full">
-                <div>
-                  {item.icon}
-                  <h2 className={`text-2xl font-semibold ${item.titleColor}`}>{item.title}</h2>
-                  <p className="mt-2 text-gray-400">{item.description}</p>
-                </div>
-                <p className="mt-2 text-sm text-gray-300">{item.skills}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </motion.section>
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
 
-      <footer className="text-center mt-12">
-        <Button 
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl"
-          onClick={() => window.open('https://www.linkedin.com/in/clasteruga/', '_blank')}
-        >
-          Contact Me
-        </Button>
-      </footer>
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1e3c72;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      color: #1e3c72;
+      margin-top: 3px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e3c72;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #1e3c72;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BI & Data Engineering</h1>
+    <p>Analytics & Data Visualization | 10+ years in designing and developing analytical systems, data integration, and reporting solutions</p>
+  </header>
+
+  <section>
+    <h2>Key Skills & Experience</h2>
+    <div class="skills">
+
+      <div class="card">
+        <div class="icon">📊</div>
+        <div>🔹 <strong>Analytical Systems Development:</strong> Designing, developing, and maintaining OLAP cubes (MS SSAS) and Power BI semantic models.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🗄️</div>
+        <div>🔹 <strong>SQL & Database Management:</strong> Writing optimized T-SQL queries, stored procedures, and views in SQL Server; working with Azure Data Warehouse.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔄</div>
+        <div>🔹 <strong>ETL & Data Integration:</strong> Building scalable ETL pipelines with SSIS & Azure Data Factory, optimizing data flows, and architecting data warehouses.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📈</div>
+        <div>🔹 <strong>Reporting & Dashboards:</strong> Creating insightful reports and dashboards with Power BI, SSRS, and DevExpress, integrating KPIs and advanced analytics.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <div>🔹 <strong>Power BI & Embedded Analytics:</strong> Developing interactive Power BI solutions, embedding reports into external apps, and utilizing Power BI REST API & Client API.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <div>🔹 <strong>Programming & Automation:</strong> Hands-on experience with C#, PowerShell, Power Query M, DAX, Python, CosmosDB, MS Synapse, and Azure tech stack.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <div>🔹 <strong>BI Performance & Optimization:</strong> Monitoring and fine-tuning BI systems, including Power BI Premium & Embedded.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔒</div>
+        <div>🔹 <strong>Security & Access Control:</strong> Implementing Row-Level Security (RLS) and managing security models in Power BI.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">☁️</div>
+        <div>🔹 <strong>Cloud & Big Data:</strong> Working with Azure Databricks, Azure Data Factory, and leveraging Azure services for scalable data solutions.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📌</div>
+        <div>🔹 <strong>BI Project Management:</strong> Leading end-to-end BI solution development - from ETL to analytical dashboards.</div>
+      </div>
+
     </div>
-  );
-};
+  </section>
 
-export default Portfolio;
+  <section>
+    <h2>Contact & Links</h2>
+    <p style="text-align:center;">
+      <a href="mailto:your.email@example.com">📧 Email</a> | 
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank">🔗 LinkedIn</a> | 
+      <a href="https://github.com/yourprofile" target="_blank">🐙 GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    🚀 Built with passion for Data & Analytics
+  </footer>
+
+</body>
+</html>
