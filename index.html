@@ -19,7 +19,6 @@
       padding: 80px 20px;
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
-      position: relative;
     }
 
     header img {
@@ -60,7 +59,7 @@
 
     section {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 60px auto;
       padding: 0 20px;
     }
 
@@ -99,12 +98,32 @@
       margin-top: 3px;
     }
 
+    /* ===== PROJECTS ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .projects img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .projects img:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       background: #1e3c72;
       color: white;
       font-size: 0.9rem;
+      margin-top: 40px;
     }
 
     a {
@@ -118,15 +137,15 @@
 </head>
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header>
-    <!-- Место для фото -->
     <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/photo.jpg?raw=true" alt="Your Name">
     <h1>BI & Data Engineering</h1>
     <p>Analytics & Data Visualization | 10+ years in designing and developing analytical systems, data integration, and reporting solutions</p>
-    <!-- Кнопка скачать резюме -->
     <a href="https://github.com/Clasteruga88/my-portfolio/raw/refs/heads/main/docs/EResume.docx" class="resume-btn" download>Скачать резюме</a>
   </header>
 
+  <!-- ===== SKILLS ===== -->
   <section>
     <h2>Key Skills & Experience</h2>
     <div class="skills">
@@ -184,6 +203,38 @@
     </div>
   </section>
 
+  <!-- ===== PROJECTS ===== -->
+  <section>
+    <h2>My dashboards examples</h2>
+    <div class="projects">
+      <div>
+        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/1.jfif
+?raw=true" alt="Project 1">
+      </div>
+      <div>
+        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/2.jfif
+?raw=true" alt="Project 2">
+      </div>
+      <div>
+        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/3.jfif
+?raw=true" alt="Project 2">
+      </div>
+      <div>
+        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/4.jfif
+?raw=true" alt="Project 2">
+      </div>
+      <div>
+        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/5.jfif
+?raw=true" alt="Project 2">
+      </div>
+      <div>
+        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/6.jfif
+?raw=true" alt="Project 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
   <section>
     <h2>Contact & Links</h2>
     <p style="text-align:center;">
@@ -191,7 +242,7 @@
       <a href="https://www.linkedin.com/in/clasteruga/" target="_blank">🔗 LinkedIn</a>
     </p>
   </section>
-  
+
   <footer>
     🚀 Built with passion for Data & Analytics
   </footer>
