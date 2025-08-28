@@ -50,6 +50,7 @@
       font-weight: bold;
       border-radius: 6px;
       text-decoration: none;
+      margin: 5px;
       transition: background 0.3s;
     }
 
@@ -108,13 +109,72 @@
 
     .projects img {
       width: 100%;
+      max-height: 220px;
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s;
+      cursor: pointer;
     }
 
     .projects img:hover {
       transform: scale(1.05);
+    }
+
+    /* ===== MODAL (Lightbox) ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      font-weight: bold;
+      color: white;
+      padding: 16px;
+      user-select: none;
+      transition: 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      color: #ff8c00;
+    }
+
+    .prev {
+      left: 30px;
+    }
+
+    .next {
+      right: 30px;
     }
 
     footer {
@@ -139,65 +199,66 @@
 
   <!-- ===== HEADER ===== -->
   <header>
-    <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/photo.jpg?raw=true" alt="Your Name">
+    <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/photo.jpg?raw=true" alt="Your Photo">
     <h1>BI & Data Engineering</h1>
     <p>Analytics & Data Visualization | 10+ years in designing and developing analytical systems, data integration, and reporting solutions</p>
-    <a href="https://github.com/Clasteruga88/my-portfolio/raw/refs/heads/main/docs/EResume.docx" class="resume-btn" download>Download CV</a>
+    <a href="https://github.com/Clasteruga88/my-portfolio/raw/main/docs/EResume.docx" class="resume-btn" download>Download CV (DOCX)</a>
+    <a href="https://github.com/Clasteruga88/my-portfolio/raw/main/docs/EResume.pdf" class="resume-btn" download>Download CV (PDF)</a>
   </header>
 
-  <!-- ===== SKILLS ===== -->
+<!-- ===== SKILLS ===== -->
   <section>
     <h2>Key Skills & Experience</h2>
     <div class="skills">
 
       <div class="card">
         <div class="icon">📊</div>
-        <div>🔹 <strong>Analytical Systems Development:</strong> Designing, developing, and maintaining OLAP cubes (MS SSAS) and Power BI semantic models.</div>
+        <div><strong>Analytical Systems Development:</strong> Designing, developing, and maintaining OLAP cubes (MS SSAS) and Power BI semantic models.</div>
       </div>
 
       <div class="card">
         <div class="icon">🗄️</div>
-        <div>🔹 <strong>SQL & Database Management:</strong> Writing optimized T-SQL queries, stored procedures, and views in SQL Server; working with Azure Data Warehouse.</div>
+        <div><strong>SQL & Database Management:</strong> Writing optimized T-SQL queries, stored procedures, and views in SQL Server; working with Azure Data Warehouse.</div>
       </div>
 
       <div class="card">
         <div class="icon">🔄</div>
-        <div>🔹 <strong>ETL & Data Integration:</strong> Building scalable ETL pipelines with SSIS & Azure Data Factory, optimizing data flows, and architecting data warehouses.</div>
+        <div><strong>ETL & Data Integration:</strong> Building scalable ETL pipelines with SSIS & Azure Data Factory, optimizing data flows, and architecting data warehouses.</div>
       </div>
 
       <div class="card">
         <div class="icon">📈</div>
-        <div>🔹 <strong>Reporting & Dashboards:</strong> Creating insightful reports and dashboards with Power BI, SSRS, and DevExpress, integrating KPIs and advanced analytics.</div>
+        <div><strong>Reporting & Dashboards:</strong> Creating insightful reports and dashboards with Power BI, SSRS, and DevExpress, integrating KPIs and advanced analytics.</div>
       </div>
 
       <div class="card">
         <div class="icon">💻</div>
-        <div>🔹 <strong>Power BI & Embedded Analytics:</strong> Developing interactive Power BI solutions, embedding reports into external apps, and utilizing Power BI REST API & Client API.</div>
+        <div><strong>Power BI & Embedded Analytics:</strong> Developing interactive Power BI solutions, embedding reports into external apps, and utilizing Power BI REST API & Client API.</div>
       </div>
 
       <div class="card">
         <div class="icon">🛠️</div>
-        <div>🔹 <strong>Programming & Automation:</strong> Hands-on experience with C#, PowerShell, Power Query M, DAX, Python, CosmosDB, MS Synapse, and Azure tech stack.</div>
+        <div><strong>Programming & Automation:</strong> Hands-on experience with C#, PowerShell, Power Query M, DAX, Python, CosmosDB, MS Synapse, and Azure tech stack.</div>
       </div>
 
       <div class="card">
         <div class="icon">⚡</div>
-        <div>🔹 <strong>BI Performance & Optimization:</strong> Monitoring and fine-tuning BI systems, including Power BI Premium & Embedded.</div>
+        <div><strong>BI Performance & Optimization:</strong> Monitoring and fine-tuning BI systems, including Power BI Premium & Embedded.</div>
       </div>
 
       <div class="card">
         <div class="icon">🔒</div>
-        <div>🔹 <strong>Security & Access Control:</strong> Implementing Row-Level Security (RLS) and managing security models in Power BI.</div>
+        <div><strong>Security & Access Control:</strong> Implementing Row-Level Security (RLS) and managing security models in Power BI.</div>
       </div>
 
       <div class="card">
         <div class="icon">☁️</div>
-        <div>🔹 <strong>Cloud & Big Data:</strong> Working with Azure Databricks, Azure Data Factory, and leveraging Azure services for scalable data solutions.</div>
+        <div><strong>Cloud & Big Data:</strong> Working with Azure Databricks, Azure Data Factory, and leveraging Azure services for scalable data solutions.</div>
       </div>
 
       <div class="card">
         <div class="icon">📌</div>
-        <div>🔹 <strong>BI Project Management:</strong> Leading end-to-end BI solution development - from ETL to analytical dashboards.</div>
+        <div><strong>BI Project Management:</strong> Leading end-to-end BI solution development - from ETL to analytical dashboards.</div>
       </div>
 
     </div>
@@ -207,46 +268,83 @@
   <section>
     <h2>My dashboards examples</h2>
     <div class="projects">
-      <div>
-        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/1.jfif
-?raw=true" alt="Project 1">
-      </div>
-      <div>
-        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/2.jfif
-?raw=true" alt="Project 2">
-      </div>
-      <div>
-        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/3.jfif
-?raw=true" alt="Project 3">
-      </div>
-      <div>
-        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/4.jfif
-?raw=true" alt="Project 4">
-      </div>
-      <div>
-        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/5.jfif
-?raw=true" alt="Project 5">
-      </div>
-      <div>
-        <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/6.jfif
-?raw=true" alt="Project 6">
-      </div>
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/1.jfif?raw=true" alt="Project 1">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/3.jfif?raw=true" alt="Project 2">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/4.jfif?raw=true" alt="Project 3">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/5.jfif?raw=true" alt="Project 4">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/2.jfif?raw=true" alt="Project 5">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/6.jfif?raw=true" alt="Project 6">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/7.jfif?raw=true" alt="Project 7">
+      <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/8.jfif?raw=true" alt="Project 8">
     </div>
   </section>
+
+  <!-- ===== MODAL LIGHTBOX ===== -->
+  <div class="modal" id="lightbox">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Full view">
+    <span class="next">&#10095;</span>
+  </div>
 
   <!-- ===== CONTACT ===== -->
   <section>
     <h2>Contact & Links</h2>
     <p style="text-align:center;">
       <a href="mailto:Clasteruga@gmail.com">📧 Email</a> | 
-      <a href="https://www.linkedin.com/in/clasteruga/" target="_blank">🔗 LinkedIn</a>
+      <a href="https://www.linkedin.com/in/clasteruga/" target="_blank">🔗 LinkedIn</a> | 
+      <a href="https://t.me/@x_Hummer_x" target="_blank">📱 Telegram</a>
     </p>
   </section>
 
   <footer>
-    🚀 Built with passion for Data & Analytics
+    🚀 Built with passion for Data & Analytics | © 2025 Clasteruga
   </footer>
 
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    const modal = document.getElementById("lightbox");
+    const modalImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+    const images = document.querySelectorAll(".projects img");
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      modal.style.display = "flex";
+      modalImg.src = images[index].src;
+      currentIndex = index;
+    }
+
+    images.forEach((img, index) => {
+      img.addEventListener("click", () => openModal(index));
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+
+    nextBtn.onclick = () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    };
+
+    prevBtn.onclick = () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    };
+
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
+
+    document.addEventListener("keydown", (e) => {
+      if (modal.style.display === "flex") {
+        if (e.key === "ArrowRight") nextBtn.onclick();
+        if (e.key === "ArrowLeft") prevBtn.onclick();
+        if (e.key === "Escape") modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
-
