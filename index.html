@@ -349,15 +349,20 @@
       }
     });
 
-    fetch('https://api.countapi.xyz/hit/clasteruga-portfolio/visits')
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById('visits').innerText = "👁 Views: " + res.value;
-      });
+  fetch('https://api.countapi.xyz/update/clasteruga-portfolio/visits/?amount=1')
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById('visits').innerText = "👁 Views: " + res.value;
+    })
+    .catch(err => {
+      document.getElementById('visits').innerText = "👁 Views: error";
+      console.error(err);
+    });
     
   </script>
 </body>
 </html>
+
 
 
 
