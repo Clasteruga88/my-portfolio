@@ -298,8 +298,11 @@
   </section>
 
   <footer>
-    🚀 Built with passion for Data & Analytics
+    🚀 Built with passion for Data & Analytics  
+    <br>
+    <span id="visits">👁 Views: loading...</span>
   </footer>
+
 
   <!-- ===== SCRIPT ===== -->
   <script>
@@ -345,9 +348,17 @@
         if (e.key === "Escape") modal.style.display = "none";
       }
     });
+
+    fetch('https://api.countapi.xyz/hit/clasteruga-portfolio/visits')
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById('visits').innerText = "👁 Views: " + res.value;
+      });
+    
   </script>
 </body>
 </html>
+
 
 
 
