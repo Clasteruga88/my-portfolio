@@ -300,7 +300,10 @@
   <footer>
     🚀 Built with passion for Data & Analytics  
     <br>
-    <span id="visits">👁 Views: loading...</span>
+    <span>👁 Views: 
+      <img src="https://hitwebcounter.com/counter/counter.php?page=13820579&style=0006&nbdigits=5&type=page&initCount=0" 
+           title="Web Counter" Alt="counter" border="0" />
+    </span>
   </footer>
 
 
@@ -348,20 +351,11 @@
         if (e.key === "Escape") modal.style.display = "none";
       }
     });
-
-  fetch('https://api.countapi.xyz/update/clasteruga-portfolio/visits/?amount=1')
-    .then(res => res.json())
-    .then(res => {
-      document.getElementById('visits').innerText = "👁 Views: " + res.value;
-    })
-    .catch(err => {
-      document.getElementById('visits').innerText = "👁 Views: error";
-      console.error(err);
-    });
     
   </script>
 </body>
 </html>
+
 
 
 
