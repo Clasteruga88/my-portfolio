@@ -193,6 +193,32 @@
     a:hover {
       text-decoration: underline;
     }
+    
+    .social-buttons {
+      margin: 15px 0;
+    }
+
+    .social-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 8px;
+      background: white;
+      color: #1e3c72;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s, background 0.3s, color 0.3s;
+    }
+
+    .social-buttons a:hover {
+      transform: translateY(-3px);
+      background: #ff8c00;
+      color: white;
+    }
   </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CPF8MLETMF"></script>
     <script>
@@ -208,6 +234,14 @@
   <!-- ===== HEADER ===== -->
   <header>
     <img src="https://github.com/Clasteruga88/my-portfolio/blob/main/docs/photo.jpg?raw=true" alt="Your Photo">
+    
+    <!-- Social buttons -->
+    <div class="social-buttons">
+      <a href="mailto:Clasteruga@gmail.com" title="Email">✉️</a>
+      <a href="https://www.linkedin.com/in/clasteruga/" target="_blank" title="LinkedIn">🔗</a>
+      <a href="https://github.com/Clasteruga88" target="_blank" title="GitHub">🐙</a>
+    </div>
+    
     <h1>BI & Data Engineering</h1>
     <p>Analytics & Data Visualization | 10+ years in designing and developing analytical systems, data integration, and reporting solutions using SSAS, SSIS, SSRS, DWH, PowerBI, DevExpress, DAX, PowerShell, C#, Power Query M, Azure, SQL, CosmosDB, MS Synapse, Python, Databricks</p>
     <a href="https://github.com/Clasteruga88/my-portfolio/raw/main/docs/EResume.docx" class="resume-btn" download>Download CV (DOCX)</a>
@@ -370,7 +404,6 @@
   </script>
 </body>
 </html>
-
 
 
 
