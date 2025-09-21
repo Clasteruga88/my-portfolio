@@ -218,6 +218,58 @@
       background: #ff8c00;
       color: white;
     }
+    
+.achievements-section {
+  background: linear-gradient(135deg, #f0f4ff, #e6ecfa);
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+.achievements-section h2 {
+  text-align: center;
+  color: #1e3c72;
+  margin-bottom: 40px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.achievement-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-card h3 {
+  margin-top: 0;
+  color: #2a5298;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.achievement-card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+
+
+}
+
   </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CPF8MLETMF"></script>
     <script>
@@ -304,6 +356,67 @@
 
     </div>
   </section>
+  
+<section class="achievements-section">
+  <h2>Key Achievements & Projects</h2>
+  <div class="achievements-grid">
+
+    <div class="achievement-card">
+      <h3>📊 Reporting Audit & Logging System</h3>
+      <p>Designed and implemented an end-to-end Power BI usage tracking system. Provided full transparency into analytics usage, enhanced data security, identified key KPIs, and optimized system load.</p>
+      <p><strong>Centralized Analytics Portal:</strong> Created a corporate Power BI App as a single access point for 50+ reports and dashboards, reducing search time by 70% and ensuring data consistency.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>⚡ ETL/ELT Architecture & Development</h3>
+      <p>Designed highly scalable and fault-tolerant pipelines with Azure Data Factory and SSIS. Consolidated Cosmos DB, Azure SQL, and 1C sources, enabling daily processing of millions of rows and reducing DWH loading times by 25%.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>📐 Semantic Layer & Models</h3>
+      <p>Developed and optimized SSAS and Power BI Premium models with complex DAX logic, accelerating key executive reports by 40%.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>📊 Interactive Dashboards</h3>
+      <p>Built a suite of interactive Power BI dashboards using Power Query M. Implemented Row-Level Security (RLS), providing secure personalized access for 100+ employees.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>🤖 Data Management & Automation</h3>
+      <p>Automated monitoring and deployments with PowerShell & C#, saving 15+ hours/month. Used Python in Azure Databricks for big data processing and machine learning tasks.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>☁️ Cloud Infrastructure</h3>
+      <p>Managed and optimized Azure Synapse & SQL Database, reducing infrastructure costs by 15% via query optimization and resource management.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>🚀 End-to-End BI Solutions</h3>
+      <p>Led full BI lifecycle: DWH schema design → ETL (SSIS) → OLAP cubes (SSAS) → dashboards (Power BI/SSRS).</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>💡 Development & Optimization</h3>
+      <p>Authored optimized T-SQL queries, stored procedures, and views, significantly improving performance of mission-critical reports.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>☁️ Cloud Technology Adoption</h3>
+      <p>Integrated Azure SQL and Cosmos DB into projects, enhancing scalability and reliability.</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>👨‍🏫 Mentoring & Expertise</h3>
+      <p>Guided teams on BI best practices, supported pre-sales and client workshops, and advised on data architecture improvements.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
 
   <section>
   <h2>Live Dashboard Example</h2>
@@ -403,15 +516,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
